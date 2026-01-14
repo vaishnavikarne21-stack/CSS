@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Website Protection</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", sans-serif;
+}
+
+body{
+  background:#f3f2f1;
+}
+
+/* TITLE */
+.section-title{
+  text-align:center;
+  font-size:42px;
+  font-weight:700;
+  margin:70px 0 60px;
+  color:#1d2b2f;
+}
+
+/* CARD CONTAINER */
+.card-container{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding-bottom:80px;
+  flex-wrap:wrap;
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  width:340px;
+  border-radius:16px;
+  padding:45px 30px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  position:relative;
+  overflow:hidden;
+
+  opacity:0;
+  transform:translateY(50px);
+  transition:transform 0.25s ease, box-shadow 0.4s ease;
+  animation:glowPulse 5s ease-in-out infinite;
+}
+
+/* Reveal on load */
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ICON */
+.icon{
+  font-size:48px;
+  margin-bottom:25px;
+  color:#008066;
+}
+
+/* TITLE */
+.card h3{
+  font-size:22px;
+  margin-bottom:12px;
+  color:#111;
+}
+
+/* TEXT */
+.card p{
+  font-size:16px;
+  color:#555;
+  line-height:1.6;
+  margin-bottom:30px;
+}
+
+/* BUTTON */
+.card button{
+  background:#008066;
+  color:#fff;
+  border:none;
+  padding:14px 38px;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.card button:hover{
+  background:#006b55;
+}
+
+/* Glow animation (unique, slow) */
+@keyframes glowPulse{
+  0%{
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  }
+  50%{
+    box-shadow:0 18px 45px rgba(0,128,102,0.22);
+  }
+  100%{
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  }
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .section-title{
+    font-size:30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<h1 class="section-title">Website protection you can depend on.</h1>
+
+<div class="card-container">
+
+  <div class="card">
+    <div class="icon">🛡️</div>
+    <h3>Website Monitoring</h3>
+    <p>Malware removal and hack repair (response)</p>
+    <button>Detect Malware</button>
+  </div>
+
+  <div class="card">
+    <div class="icon">🔒</div>
+    <h3>Website Firewall</h3>
+    <p>Protect and speed up your site</p>
+    <button>Protect Your Site</button>
+  </div>
+
+  <div class="card">
+    <div class="icon">🧹</div>
+    <h3>Malware Removal</h3>
+    <p>Get rid of malware and clean up a hacked site</p>
+    <button>Remove Malware</button>
+  </div>
+
+</div>
+
+<script>
+/* SCROLL REVEAL */
+const cards = document.querySelectorAll('.card');
+cards.forEach((card, i)=>{
+  setTimeout(()=>card.classList.add('show'), i * 250);
+});
+
+/* MAGNETIC HOVER EFFECT (UNIQUE) */
+cards.forEach(card=>{
+  card.addEventListener('mousemove', e=>{
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width/2;
+    const y = e.clientY - rect.top - rect.height/2;
+
+    card.style.transform = `
+      translate(${x * 0.06}px, ${y * 0.06}px)
+      scale(1.03)
+    `;
+  });
+
+  card.addEventListener('mouseleave', ()=>{
+    card.style.transform = 'translate(0,0) scale(1)';
+  });
+});
+</script>
+
+</body>
+</html>

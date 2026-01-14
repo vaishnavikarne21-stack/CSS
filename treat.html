@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IDS Threat Intelligence</title>
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color: #fff;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+h1 {
+  margin:30px 0;
+  font-size:36px;
+  text-shadow:0 0 15px #00e5ff;
+  text-align:center;
+}
+
+/* CONTAINER */
+.container {
+  max-width:1000px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  padding:20px;
+  gap:20px;
+  position:relative;
+}
+
+/* ICON BOX (CENTERED, MOVEABLE) */
+.icon-box {
+  flex:0 0 80px;
+  height:80px;
+  background:linear-gradient(135deg,#ff6a00,#ee0979);
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:36px;
+  font-weight:bold;
+  box-shadow:0 8px 25px rgba(255,106,0,0.5);
+  cursor:grab;
+  position:relative;
+  animation:centerWave 4s ease-in-out infinite alternate;
+  z-index:2;
+}
+
+/* INFO BOX */
+.info-box {
+  flex:0 0 80%;
+  background:rgba(255,255,255,0.12);
+  border-radius:25px;
+  min-height:100px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:left;
+  padding:25px;
+  font-size:16px;
+  line-height:1.5;
+  box-shadow:0 8px 30px rgba(255,106,0,0.4);
+  animation:rightFloat 4s ease-in-out infinite alternate;
+  z-index:1;
+}
+
+/* HOVER EFFECT */
+.icon-box:hover, .info-box:hover {
+  transform:scale(1.05);
+  box-shadow:0 0 50px #ff6a00,0 0 80px #ee0979;
+}
+
+/* ANIMATION */
+@keyframes centerWave {
+  0% { transform: translateY(0px) rotate(-2deg); }
+  25% { transform: translateY(-10px) rotate(1deg); }
+  50% { transform: translateY(5px) rotate(-1deg); }
+  75% { transform: translateY(-5px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes rightFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* RESPONSIVE */
+@media screen and (max-width:900px) {
+  .container { flex-direction:column; align-items:center; }
+  .icon-box, .info-box { width:90%; flex:1; }
+}
+</style>
+</head>
+<body>
+
+<h1>🛡 IDS Threat Intelligence</h1>
+
+<!-- BOX 1 -->
+<div class="container">
+  <div class="icon-box" id="icon1">🧠</div>
+  <div class="info-box">
+    <h2>Advanced Threat Analysis</h2>
+    <p>Collects global threat data to identify trends and predict attacks. Integrates with IDS systems to provide actionable alerts.</p>
+    <ul>
+      <li>Real-time attack monitoring</li>
+      <li>Threat feeds from multiple sources</li>
+      <li>AI-based anomaly detection</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BOX 2 -->
+<div class="container">
+  <div class="icon-box" id="icon2">🌐</div>
+  <div class="info-box">
+    <h2>Malware Intelligence</h2>
+    <p>Tracks new malware signatures, ransomware campaigns, and exploits. Helps SOC teams update IDS rules and prevent infections.</p>
+    <ul>
+      <li>Signature updates</li>
+      <li>Behavioral analysis</li>
+      <li>Incident correlation</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BOX 3 -->
+<div class="container">
+  <div class="icon-box" id="icon3">📊</div>
+  <div class="info-box">
+    <h2>Vulnerability Intelligence</h2>
+    <p>Provides insights on software and network vulnerabilities, CVEs, and exploits. Guides patch management and IDS configuration for maximum protection.</p>
+    <ul>
+      <li>CVEs and severity ranking</li>
+      <li>Patch recommendations</li>
+      <li>Integration with SIEM/IDS</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BOX 4 (NEW) -->
+<div class="container">
+  <div class="icon-box" id="icon4">🤖</div>
+  <div class="info-box">
+    <h2>AI & Predictive Threats</h2>
+    <p>Machine learning algorithms analyze historical data to predict attacks. Supports proactive defense and automated alert generation.</p>
+    <ul>
+      <li>Predictive modeling</li>
+      <li>Anomaly detection</li>
+      <li>Automated response triggers</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BOX 5 (NEW) -->
+<div class="container">
+  <div class="icon-box" id="icon5">🚀</div>
+  <div class="info-box">
+    <h2>Incident Response Insights</h2>
+    <p>Provides recommendations for quick containment and remediation of detected threats. Helps SOC teams prioritize incidents effectively.</p>
+    <ul>
+      <li>Step-by-step remediation</li>
+      <li>Impact assessment</li>
+      <li>Post-incident reporting</li>
+    </ul>
+  </div>
+</div>
+<!-- BOX 6 (NEW) -->
+<div class="container">
+    <div class="icon-box" id="icon6">🔒</div>
+    <div class="info-box">
+      <h2>Threat Mitigation Strategies</h2>
+      <p>Provides actionable steps to block or minimize detected threats. Integrates with IDS rules to strengthen network security and reduce attack impact.</p>
+      <ul>
+        <li>Real-time mitigation tactics</li>
+        <li>Firewall & IDS rule recommendations</li>
+        <li>Continuous improvement based on threat analysis</li>
+      </ul>
+    </div>
+  </div>
+  
+
+<!-- MOVEABLE ICON SCRIPT -->
+<script>
+let dragged = null;
+document.querySelectorAll('.icon-box').forEach(box=>{
+  box.addEventListener('mousedown', ()=>{
+    dragged = box;
+  });
+});
+document.addEventListener('mousemove', e=>{
+  if(dragged){
+    dragged.style.position = "relative";
+    dragged.style.left = e.pageX - dragged.offsetWidth/2 - dragged.parentElement.offsetLeft + "px";
+    dragged.style.top = e.pageY - dragged.offsetHeight/2 - dragged.parentElement.offsetTop + "px";
+  }
+});
+document.addEventListener('mouseup', ()=>{ dragged = null; });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Website Checker Info</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", sans-serif;
+}
+
+body{
+  background:#f3f2f1;
+}
+
+/* COMMON CARD */
+.info-card{
+  max-width:1200px;
+  margin:80px auto;
+  background:#fff;
+  border-radius:18px;
+  padding:60px 70px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+
+  opacity:0;
+  transform:translateY(60px);
+  animation:revealCard 1s ease forwards, floatCard 6s ease-in-out infinite;
+}
+
+/* SECOND CARD DELAY */
+.info-card:nth-child(2){
+  animation-delay:0.3s;
+}
+
+/* HEADING */
+.info-card h2{
+  font-size:42px;
+  color:#1d2b2f;
+  margin-bottom:25px;
+  position:relative;
+  display:inline-block;
+}
+
+/* HEADING LINE ANIMATION */
+.info-card h2::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  height:4px;
+  width:0;
+  background:#008066;
+  animation:lineGrow 1.2s ease forwards;
+}
+
+/* TEXT */
+.info-card p{
+  font-size:18px;
+  color:#444;
+  line-height:1.8;
+  margin-top:30px;
+}
+
+/* HOVER EFFECT */
+.info-card:hover{
+  box-shadow:0 25px 55px rgba(0,128,102,0.25);
+}
+
+/* ANIMATIONS */
+@keyframes revealCard{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes floatCard{
+  0%{ transform:translateY(0); }
+  50%{ transform:translateY(-8px); }
+  100%{ transform:translateY(0); }
+}
+
+@keyframes lineGrow{
+  to{
+    width:100%;
+  }
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .info-card{
+    padding:40px 30px;
+    margin:50px 15px;
+  }
+  .info-card h2{
+    font-size:28px;
+  }
+  .info-card p{
+    font-size:16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- CARD 1 -->
+<div class="info-card">
+  <h2>Why use a website checker?</h2>
+  <p>
+    Regularly monitoring your site for malware and indicators of compromise
+    can help you keep tabs on your website’s security and focus your
+    perspective to identify security related issues. Quick response to
+    threats help maintain SEO rankings, organic traffic, brand reputation,
+    and protect website visitors from harm.
+  </p>
+</div>
+
+<!-- CARD 2 -->
+<div class="info-card">
+  <h2>How to check if a website is safe.</h2>
+  <p>
+    Scanning a website’s source code for malicious links, redirects,
+    iframes, JavaScript, or spam can help you determine if a website is not
+    safe to use. Run a web safety check with SiteCheck to scan for any
+    viruses or malware for a specific URL. A quick remote malware scan can
+    help you pinpoint any configuration issues or security anomalies at the
+    client level.
+  </p>
+</div>
+
+</body>
+</html>

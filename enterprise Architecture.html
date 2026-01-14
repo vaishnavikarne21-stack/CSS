@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Enterprise IDS Architecture</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+  min-height:100vh;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:25px;
+  font-size:28px;
+  font-weight:bold;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:30px;
+}
+
+/* DESCRIPTION */
+.desc{
+  text-align:center;
+  max-width:800px;
+  margin:0 auto 30px;
+  opacity:0.9;
+  animation:fadeIn 1.5s ease;
+}
+
+/* ARCHITECTURE AREA */
+.architecture{
+  position:relative;
+  background:rgba(255,255,255,0.12);
+  border-radius:18px;
+  padding:30px;
+  height:420px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.5);
+  overflow:hidden;
+}
+
+/* BOX */
+.box{
+  position:absolute;
+  width:170px;
+  padding:15px;
+  text-align:center;
+  background:linear-gradient(135deg,#0f2027,#203a43);
+  border-radius:15px;
+  cursor:grab;
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
+
+.box:hover{
+  transform:scale(1.07);
+  box-shadow:0 20px 40px rgba(0,229,255,0.6);
+}
+
+/* BOX POSITIONS */
+.internet{top:160px; left:20px;}
+.firewall{top:160px; left:230px;}
+.load{top:160px; left:440px;}
+.network{top:40px; left:660px;}
+.host{top:160px; left:660px;}
+.web{top:280px; left:660px;}
+.ai{top:160px; left:900px;}
+.siem{top:40px; left:900px;}
+.soc{top:280px; left:900px;}
+
+/* INFO */
+.info{
+  margin-top:20px;
+  background:#0f2027;
+  padding:12px;
+  border-radius:10px;
+  min-height:25px;
+}
+
+/* BACK */
+.back{
+  display:inline-block;
+  margin-top:30px;
+  padding:12px 25px;
+  background:#00e5ff;
+  color:#000;
+  text-decoration:none;
+  border-radius:25px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.back:hover{ background:#00bcd4; }
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<header>🏗 Enterprise IDS Architecture</header>
+
+<div class="container">
+
+  <div class="desc">
+    Enterprise IDS architecture provides multi-layer security by integrating
+    Network, Host, Web, and AI-based detection with centralized monitoring.
+  </div>
+
+  <div class="architecture">
+
+    <div class="box internet" onclick="info('internet')">🌐 Internet</div>
+    <div class="box firewall" onclick="info('firewall')">🔥 Firewall</div>
+    <div class="box load" onclick="info('load')">⚙ Load Balancer</div>
+
+    <div class="box network" onclick="info('network')">🛡 Network IDS</div>
+    <div class="box host" onclick="info('host')">💻 Host IDS</div>
+    <div class="box web" onclick="info('web')">🌍 Web IDS</div>
+
+    <div class="box ai" onclick="info('ai')">🤖 AI Engine</div>
+    <div class="box siem" onclick="info('siem')">📊 SIEM</div>
+    <div class="box soc" onclick="info('soc')">👨‍💻 SOC Team</div>
+
+  </div>
+
+  <div class="info" id="infoBox">
+    Click on any component to view details.
+  </div>
+
+  <div style="text-align:center;">
+    <a href="Enterprises.html" class="back">⬅ Back to Enterprise</a>
+  </div>
+
+</div>
+
+<script>
+function info(type){
+  const box=document.getElementById("infoBox");
+  if(type==="internet") box.innerHTML="🌐 Internet: External users and traffic source.";
+  if(type==="firewall") box.innerHTML="🔥 Firewall: Filters traffic based on security rules.";
+  if(type==="load") box.innerHTML="⚙ Load Balancer: Distributes traffic efficiently.";
+  if(type==="network") box.innerHTML="🛡 Network IDS: Monitors enterprise network traffic.";
+  if(type==="host") box.innerHTML="💻 Host IDS: Detects malicious activity on servers.";
+  if(type==="web") box.innerHTML="🌍 Web IDS: Protects enterprise web applications.";
+  if(type==="ai") box.innerHTML="🤖 AI Engine: Detects unknown and zero-day attacks.";
+  if(type==="siem") box.innerHTML="📊 SIEM: Centralized log and alert management.";
+  if(type==="soc") box.innerHTML="👨‍💻 SOC Team: Analyzes alerts and responds to incidents.";
+}
+
+/* DRAG FEATURE */
+let drag=null;
+document.querySelectorAll('.box').forEach(b=>{
+  b.onmousedown=()=>drag=b;
+});
+document.onmousemove=e=>{
+  if(drag){
+    drag.style.left=e.pageX-drag.offsetWidth/2+"px";
+    drag.style.top=e.pageY-drag.offsetHeight/2+"px";
+  }
+};
+document.onmouseup=()=>drag=null;
+</script>
+
+</body>
+</html>

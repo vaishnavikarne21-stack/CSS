@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Host IDS</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#eef2f3;
+  padding:30px;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  background:#fff;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+h1{color:#0f2027;}
+ul li{margin:8px 0;}
+
+/* ===== ARCHITECTURE AREA ===== */
+.architecture {
+  margin-top: 30px;
+  background: #c2ddeb;
+  border-radius: 15px;
+  background-image: url('./product.jpg');
+  background-repeat: no-repeat;       /* Prevent image repeating */
+  background-size: cover;             /* Cover the entire container */
+  background-position: center;        /* Center the background image */
+  padding: 50px;
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+}
+.architecture {
+  position: relative;
+  margin-top: 30px;
+  background: #ffffff;  /* fallback background */
+  border-radius: 15px;
+  padding: 50px;
+  height: 350px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Blurred background image */
+.architecture::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('./images/Hoast\ IDS.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(1px);        /* <-- blur effect here */
+  border-radius: 15px;
+  z-index: -1;              /* behind the content */
+}
+
+/* BOX STYLE */
+.box{
+  position:absolute;
+  width:160px;
+  padding:15px;
+  background:linear-gradient(135deg,#0f2027,#203a43);
+  color:#fff;
+  text-align:center;
+  border-radius:12px;
+  cursor:grab;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  transition:transform 0.3s;
+}
+
+.box:hover{
+  transform:scale(1.05);
+}
+
+/* BOX POSITIONS */
+.internet{top:120px; left:20px;}
+.firewall{top:120px; left:220px;}
+.ids{top:50px; left:420px;}
+.alert{top:200px; left:420px;}
+.admin{top:120px; left:650px;}
+
+/* INFO PANEL */
+.info{
+  margin-top:10px;
+  background:#0f2027;
+  color:#fff;
+  padding:10px;
+  border-radius:10px;
+  min-height:20px;
+}
+
+/* BACK BUTTON */
+.back{
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 18px;
+  background:#0f2027;
+  color:#fff;
+  text-decoration:none;
+  border-radius:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Host Intrusion Detection System</h1>
+
+<p>
+Host IDS monitors activities inside a single system such as
+files, logs, processes, and system calls.
+</p>
+
+<h3>Key Features</h3>
+<ul>
+  <li>File integrity monitoring</li>
+  <li>Log analysis</li>
+  <li>Unauthorized access detection</li>
+  <li>Malware activity detection</li>
+</ul>
+
+<h3>Architecture Diagram (Interactive)</h3>
+
+<div class="architecture">
+
+  <div class="box internet" onclick="showInfo('os')">💻 Host OS</div>
+  <div class="box firewall" onclick="showInfo('logs')">📄 System Logs</div>
+  <div class="box ids" onclick="showInfo('ids')">🛡 HIDS Engine</div>
+  <div class="box alert" onclick="showInfo('alert')">🚨 Alert System</div>
+  <div class="box admin" onclick="showInfo('admin')">👨‍💻 Admin</div>
+
+</div>
+
+<div class="info" id="infoBox">
+Click on any component to view details.
+</div>
+
+<a href="products.html" class="back">⬅ Back to Products</a>
+</div>
+
+<script>
+/* ===== INFO DETAILS ===== */
+function showInfo(type){
+  let info = document.getElementById("infoBox");
+  if(type === "os"){
+    info.innerHTML = "💻 Host OS: Operating system being monitored.";
+  }
+  if(type === "logs"){
+    info.innerHTML = "📄 System Logs: Records user activities and system events.";
+  }
+  if(type === "ids"){
+    info.innerHTML = "🛡 HIDS Engine: Detects abnormal behavior inside the host.";
+  }
+  if(type === "alert"){
+    info.innerHTML = "🚨 Alert System: Generates alerts for suspicious activity.";
+  }
+  if(type === "admin"){
+    info.innerHTML = "👨‍💻 Admin: Reviews alerts and takes corrective action.";
+  }
+}
+
+/* ===== DRAG & MOVE BOXES ===== */
+let dragged = null;
+
+document.querySelectorAll('.box').forEach(box=>{
+  box.addEventListener('mousedown', ()=>{
+    dragged = box;
+  });
+});
+
+document.addEventListener('mousemove', (e)=>{
+  if(dragged){
+    dragged.style.left = e.pageX - dragged.offsetWidth/2 - 20 + "px";
+    dragged.style.top = e.pageY - dragged.offsetHeight/2 - 20 + "px";
+  }
+});
+
+document.addEventListener('mouseup', ()=>{
+  dragged = null;
+});
+</script>
+
+</body>
+</html>

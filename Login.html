@@ -1,0 +1,339 @@
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Free Code </title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  background-color: #0c0a18; /* Un fondo más oscuro, casi negro azulado */
+}
+
+#background-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  cursor: none;
+}
+
+.glass-card {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(55, 65, 81, 0.4);
+  transition: all 0.3s ease;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.form-input::placeholder {
+  color: rgba(156, 163, 175, 0.6);
+}
+
+#status-message {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+#status-message.show {
+  opacity: 1;
+  max-height: 100px;
+}
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* covers entire hero area */
+    z-index: 0;         /* behind the content */
+}
+
+  </style>
+  </head>
+
+<body class="text-gray-200">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="C:\Users\Vaishnavi\Desktop\Capstone Project\3129671-uhd_3840_2160_30fps.mp4" type="video/mp4">
+</video>
+
+
+  <canvas id="background-canvas"></canvas>
+
+  <main class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md p-8 space-y-6 rounded-2xl shadow-2xl glass-card">
+
+      <div class="text-center">
+        <h1 class="text-3xl font-bold text-white tracking-tight">LOGIN</h1>
+      <!-- <p class="mt-2 text-gray-400">Register Now</p> -->
+      </div>
+
+      <form id="login-form" class="space-y-6" action="#" method="POST">
+
+        <div>
+          <label for="email" class="sr-only">Password</label>
+          <div class="relative">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.095a1.23 1.23 0 00.41-1.412A9.992 9.992 0 0010 12a9.992 9.992 0 00-6.535 2.493z" />
+              </svg>
+            </div>
+            <input id="email" name="email" type="text" autocomplete="email" required class="form-input block w-full rounded-lg border-0 bg-white/5 py-3 pl-10 text-white ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-cyan-500 sm:text-sm sm:leading-6 transition duration-300" placeholder="admin@gmail.com">
+          </div>
+        </div>
+        <div>
+          <label for="password" class="sr-only">Password</label>
+          <div class="relative">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <input id="password" name="password" type="password" autocomplete="current-password" required class="form-input block w-full rounded-lg border-0 bg-white/5 py-3 pl-10 text-white ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-cyan-500 sm:text-sm sm:leading-6 transition duration-300" placeholder="password">
+          </div>
+        </div>
+        <div class="flex items-center justify-between text-sm">
+          <div class="flex items-center">
+            <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 rounded border-gray-600 bg-gray-700 text-cyan-600 focus:ring-cyan-500">
+            <label for="remember-me" class="ml-2 block text-gray-400">Approved </label>
+          </div>
+          <a href="#" class="font-medium text-cyan-400 hover:text-cyan-300 transition duration-300">Forgot Password</a>
+        </div>
+
+        <div>
+          <button id="login-button" type="submit" class="w-full flex justify-center rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 hover:from-cyan-600 hover:to-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500 transition-all duration-300 transform hover:scale-105">
+            log in
+          </button>
+        </div>
+      </form>
+      <div id="status-message" class="text-center p-3 rounded-lg">
+        <p id="status-text"></p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  // --- Lógica de la animación del Canvas ---
+  const canvas = document.getElementById("background-canvas");
+  const ctx = canvas.getContext("2d");
+
+  let width, height, centerX, centerY;
+  let nodes = [];
+  let packets = [];
+  let mouse = { x: null, y: null, radius: 150 };
+
+  const config = {
+    nodeCount: 250, // More nodes for a denser network
+    packetCount: 20, // Number of data packets
+    fov: 350, // Field of view for 3D effect
+    baseSpeed: 0.6, // Base speed of nodes moving forward
+    packetSpeed: 1.5 // Base speed of data packets
+  };
+
+  class Node {
+    constructor() {
+      this.x = (Math.random() - 0.5) * 3000;
+      this.y = (Math.random() - 0.5) * 3000;
+      this.z = Math.random() * 3000;
+      this.projected = {};
+    }
+
+    reset() {
+      this.x = (Math.random() - 0.5) * 3000;
+      this.y = (Math.random() - 0.5) * 3000;
+      this.z = 3000;
+    }
+
+    project() {
+      const scale = config.fov / (config.fov + this.z);
+      this.projected.x = centerX + this.x * scale;
+      this.projected.y = centerY + this.y * scale;
+      this.projected.alpha = Math.max(0, 1 - this.z / 3000);
+    }
+
+    update() {
+      this.z -= config.baseSpeed;
+      if (this.z < 1) {
+        this.reset();
+      }
+      this.project();
+    }
+  }
+
+  class Packet {
+    constructor() {
+      this.reset();
+    }
+    reset() {
+      const startNodeIndex = Math.floor(Math.random() * nodes.length);
+      let endNodeIndex = Math.floor(Math.random() * nodes.length);
+      while (startNodeIndex === endNodeIndex) {
+        endNodeIndex = Math.floor(Math.random() * nodes.length);
+      }
+      this.from = nodes[startNodeIndex];
+      this.to = nodes[endNodeIndex];
+      this.progress = 0;
+      this.speed = Math.random() * 0.5 + config.packetSpeed;
+    }
+    update() {
+      this.progress += this.speed;
+      if (this.progress >= 100) {
+        this.reset();
+      }
+    }
+    draw() {
+      const p1 = this.from.projected;
+      const p2 = this.to.projected;
+      if (!p1.x || !p2.x) return;
+      const currentX = p1.x + (p2.x - p1.x) * (this.progress / 100);
+      const currentY = p1.y + (p2.y - p1.y) * (this.progress / 100);
+      const alpha =
+        Math.min(p1.alpha, p2.alpha) * (1 - Math.abs(50 - this.progress) / 50);
+      if (alpha <= 0) return;
+      ctx.beginPath();
+      ctx.arc(currentX, currentY, 2, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+      ctx.shadowColor = "white";
+      ctx.shadowBlur = 10;
+      ctx.fill();
+    }
+  }
+
+  function setup() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+    centerX = width / 2;
+    centerY = height / 2;
+    nodes = Array.from({ length: config.nodeCount }, () => new Node());
+    packets = Array.from({ length: config.packetCount }, () => new Packet());
+  }
+
+  function drawNetwork() {
+    ctx.beginPath();
+    for (let i = 0; i < nodes.length; i++) {
+      const p1 = nodes[i].projected;
+      ctx.fillStyle = `rgba(56, 189, 248, ${p1.alpha * 0.7})`;
+      ctx.fillRect(p1.x - 0.5, p1.y - 0.5, 1, 1);
+      for (let j = i + 1; j < nodes.length; j++) {
+        const p2 = nodes[j].projected;
+        const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+        if (dist < 120) {
+          const alpha = Math.min(p1.alpha, p2.alpha) * (1 - dist / 120);
+          ctx.strokeStyle = `rgba(56, 189, 248, ${alpha * 0.5})`;
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+        }
+      }
+    }
+    ctx.shadowColor = `rgba(56, 189, 248, 0.5)`;
+    ctx.shadowBlur = 5;
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+  }
+
+  function drawMouseInteraction() {
+    if (mouse.x === null) return;
+    ctx.beginPath();
+    for (const node of nodes) {
+      const p = node.projected;
+      const dist = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+      if (dist < mouse.radius) {
+        const alpha = p.alpha * (1 - dist / mouse.radius);
+        ctx.strokeStyle = `rgba(200, 220, 255, ${alpha * 0.8})`;
+        ctx.moveTo(mouse.x, mouse.y);
+        ctx.lineTo(p.x, p.y);
+      }
+    }
+    ctx.shadowColor = "rgba(200, 220, 255, 0.8)";
+    ctx.shadowBlur = 10;
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    nodes.forEach((node) => node.update());
+    packets.forEach((packet) => packet.update());
+    drawNetwork();
+    packets.forEach((packet) => packet.draw());
+    drawMouseInteraction();
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener("resize", setup);
+  window.addEventListener("mousemove", (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+  window.addEventListener("mouseout", () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
+  setup();
+  animate();
+
+  // --- Lógica de Login Simulado ---
+  const loginForm = document.getElementById("login-form");
+  const loginButton = document.getElementById("login-button");
+  const statusMessage = document.getElementById("status-message");
+  const statusText = document.getElementById("status-text");
+
+  loginForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    loginButton.innerHTML = `<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>verifying...`;
+    loginButton.disabled = true;
+
+    setTimeout(() => {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Simple check for demo purposes
+      if (email === "admin@gmail.com" && password === "password") {
+        statusText.textContent = "¡Acceso concedido! Redirigiendo...";
+        statusMessage.className =
+          "text-center p-3 rounded-lg bg-green-500/20 text-green-300 show";
+        // Aquí podrías redirigir, por ejemplo: window.location.href = '/dashboard';
+      } else {
+        statusText.textContent = "Fill proper information";
+        statusMessage.className =
+          "text-center p-3 rounded-lg bg-red-500/20 text-red-300 show";
+        loginButton.innerHTML = "Login";
+        loginButton.disabled = false;
+      }
+    }, 1500);
+  });
+});
+
+  </script>
+</body>
+
+</html>

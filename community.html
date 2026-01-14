@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IDS Community</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+  min-height:100vh;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:35px 20px;
+}
+
+header h1{
+  font-size:38px;
+  text-shadow:0 0 18px #00e5ff;
+}
+
+header p{
+  max-width:750px;
+  margin:15px auto 0;
+  opacity:0.9;
+  line-height:1.6;
+}
+
+/* MAIN */
+.community{
+  max-width:1100px;
+  margin:auto;
+  padding:30px;
+}
+
+/* ROW */
+.row{
+  display:flex;
+  gap:30px;
+  margin-bottom:35px;
+}
+
+/* BOX */
+.box{
+  flex:1;
+  background:rgba(255,255,255,0.12);
+  padding:28px;
+  border-radius:25px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.5);
+  animation:floatSoft 4s ease-in-out infinite;
+  transition:0.3s;
+}
+
+.box:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 40px rgba(0,229,255,0.8);
+}
+
+.box h2{
+  margin-top:0;
+}
+
+.box p{
+  font-size:15px;
+  line-height:1.6;
+  opacity:0.9;
+}
+
+.tag{
+  display:inline-block;
+  margin-top:12px;
+  padding:6px 14px;
+  background:#00e5ff;
+  color:#000;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+/* JOIN */
+.join{
+  margin-top:60px;
+  text-align:center;
+  padding:40px;
+  background:linear-gradient(135deg,#00e5ff,#00bcd4);
+  color:#000;
+  border-radius:30px;
+  animation:pulse 3s infinite;
+}
+
+.join h2{
+  margin:0 0 10px;
+}
+
+.join p{
+  max-width:700px;
+  margin:auto;
+}
+
+.join a{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 32px;
+  background:#000;
+  color:#00e5ff;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.join a:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 30px rgba(0,0,0,0.5);
+}
+
+/* ANIMATIONS */
+@keyframes floatSoft{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 rgba(0,0,0,0.4);}
+  50%{box-shadow:0 0 35px rgba(0,0,0,0.6);}
+  100%{box-shadow:0 0 0 rgba(0,0,0,0.4);}
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .row{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>👥 IDS Community</h1>
+  <p>
+    A simple and powerful community space where security professionals,
+    developers, and learners collaborate to improve IDS solutions.
+  </p>
+</header>
+
+<div class="community">
+
+  <div class="row">
+    <div class="box">
+      <h2>Security Discussions</h2>
+      <p>
+        Ask questions, share real-world intrusion cases,
+        and discuss IDS tuning techniques with experts.
+      </p>
+      <span class="tag">Forums</span>
+    </div>
+
+    <div class="box">
+      <h2>Developer Contributions</h2>
+      <p>
+        Contribute IDS rules, plugins, and integrations.
+        Improve detection accuracy through collaboration.
+      </p>
+      <span class="tag">Open Source</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="box">
+      <h2>Threat Knowledge Sharing</h2>
+      <p>
+        Exchange IOCs, attack patterns, and emerging
+        threat intelligence within the community.
+      </p>
+      <span class="tag">Threat Intel</span>
+    </div>
+
+    <div class="box">
+      <h2>Events & Learning</h2>
+      <p>
+        Join webinars, hands-on workshops,
+        and community-driven IDS learning sessions.
+      </p>
+      <span class="tag">Events</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="box">
+      <h2>Mentorship & Guidance</h2>
+      <p>
+        Learn IDS deployment and monitoring from
+        experienced security professionals.
+      </p>
+      <span class="tag">Mentorship</span>
+    </div>
+
+    <div class="box">
+      <h2>Career & Networking</h2>
+      <p>
+        Connect with industry experts, SOC teams,
+        and organizations working on IDS technologies.
+      </p>
+      <span class="tag">Networking</span>
+    </div>
+  </div>
+
+  <div class="join">
+    <h2>Become a Community Member</h2>
+    <p>
+      Collaborate, learn, and grow with a global IDS
+      community focused on cybersecurity excellence.
+    </p>
+    <a href="#">Join Community</a>
+  </div>
+
+</div>
+
+</body>
+</html>

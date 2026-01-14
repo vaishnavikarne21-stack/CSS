@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IDS Documentation</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+  text-align:center;
+  min-height:100vh;
+}
+
+h1{
+  margin:30px 0;
+}
+
+/* CARDS GRID */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr); /* 3 cards per row */
+  gap:30px;
+  padding:40px;
+}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .cards{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+@media (max-width:600px){
+  .cards{
+    grid-template-columns:1fr;
+  }
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.12);
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.5);
+  transition:all 0.4s ease;
+  animation: float 4s ease-in-out infinite;
+  cursor:pointer;
+  text-align:left;
+}
+
+.card:nth-child(1){animation-delay:0s;}
+.card:nth-child(2){animation-delay:0.5s;}
+.card:nth-child(3){animation-delay:1s;}
+.card:nth-child(4){animation-delay:1.5s;}
+.card:nth-child(5){animation-delay:2s;}
+.card:nth-child(6){animation-delay:2.5s;}
+
+.card img{
+  width:50px;
+  float:right;
+  opacity:0.85;
+}
+
+.card h3{
+  margin-bottom:10px;
+  font-size:20px;
+}
+
+.card p{
+  font-size:14px;
+  opacity:0.9;
+  line-height:1.5;
+}
+
+/* HOVER EFFECT */
+.card:hover{
+  transform:translateY(-15px) scale(1.05);
+  box-shadow:0 25px 50px rgba(0,229,255,0.6);
+}
+
+/* FLOATING ANIMATION */
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0);}
+}
+
+/* INFO PANEL */
+.info-panel{
+  margin-top:40px;
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+  background:rgba(13, 163, 189, 0.765);
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.5);
+  text-align:left;
+}
+
+.info-panel h2{
+  margin-bottom:15px;
+}
+
+.info-panel p{
+  line-height:1.6;
+  opacity:0.9;
+}
+
+/* BUTTON */
+.back{
+  display:inline-block;
+  margin-top:30px;
+  padding:12px 25px;
+  background:#00e5ff;
+  color:#000;
+  text-decoration:none;
+  border-radius:25px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.back:hover{
+  background:#00bcd4;
+}
+</style>
+</head>
+
+<body>
+
+<h1>📚 IDS Documentation</h1>
+
+<div class="cards">
+  <div class="card" onclick="showInfo('installation')">
+    <h3>💻 Installation Guide</h3>
+    <p>Step-by-step instructions to deploy IDS on network and host systems.</p>
+    <img src="https://img.icons8.com/ios-filled/100/ffffff/setup.png"/>
+  </div>
+
+  <div class="card" onclick="showInfo('configuration')">
+    <h3>⚙ Configuration</h3>
+    <p>Detailed configuration options for Network, Host, Web, and AI IDS systems.</p>
+    <img src="https://img.icons8.com/ios-filled/100/ffffff/settings.png"/>
+  </div>
+
+  <div class="card" onclick="showInfo('userguide')">
+    <h3>📖 User Guide</h3>
+    <p>Instructions for administrators and operators to monitor, analyze, and respond to alerts.</p>
+    <img src="https://img.icons8.com/ios-filled/100/ffffff/book.png"/>
+  </div>
+
+  <div class="card" onclick="showInfo('troubleshooting')">
+    <h3>🛠 Troubleshooting</h3>
+    <p>Common issues, error codes, and how to resolve them quickly.</p>
+    <img src="https://img.icons8.com/ios-filled/100/ffffff/wrench.png"/>
+  </div>
+
+  <div class="card" onclick="showInfo('api')">
+    <h3>🔗 API Documentation</h3>
+    <p>API endpoints and integration guides for third-party applications.</p>
+    <img src="https://img.icons8.com/ios-filled/100/ffffff/api.png"/>
+  </div>
+
+  <div class="card" onclick="showInfo('faq')">
+    <h3>❓ FAQ</h3>
+    <p>Frequently asked questions for quick reference and support.</p>
+    <img src="https://img.icons8.com/ios-filled/100/ffffff/help.png"/>
+  </div>
+</div>
+
+<!-- INFO PANEL -->
+<div class="info-panel" id="infoPanel">
+  <h2>Click on any card above to see detailed documentation.</h2>
+  <p>This panel will display extended information dynamically for the selected documentation topic.</p>
+</div>
+
+<div style="text-align:center;">
+  <a href="resources.html" class="back">⬅ Back to Resources</a>
+</div>
+
+<script>
+function showInfo(type){
+  let panel = document.getElementById("infoPanel");
+  if(type === 'installation'){
+    panel.innerHTML = "<h2>💻 Installation Guide</h2><p>Learn how to install Network IDS, Host IDS, Web IDS, and AI-based IDS. Includes system requirements, dependencies, step-by-step installation commands, and verification of proper installation. Screenshots and example configurations included.</p>";
+  }
+  if(type === 'configuration'){
+    panel.innerHTML = "<h2>⚙ Configuration</h2><p>Detailed configuration for each IDS module: packet monitoring, rule sets, alert thresholds, AI model tuning, and server setup. Explains both simple and advanced configurations for enterprise deployments.</p>";
+  }
+  if(type === 'userguide'){
+    panel.innerHTML = "<h2>📖 User Guide</h2><p>Instructions for administrators and operators to monitor alerts, analyze events, and take preventive measures. Covers dashboards, logs, reporting, and real-time monitoring features.</p>";
+  }
+  if(type === 'troubleshooting'){
+    panel.innerHTML = "<h2>🛠 Troubleshooting</h2><p>Guidelines to resolve common errors like false positives, connectivity issues, service crashes, and performance bottlenecks. Includes error codes, recommended steps, and tips for proactive maintenance.</p>";
+  }
+  if(type === 'api'){
+    panel.innerHTML = "<h2>🔗 API Documentation</h2><p>All API endpoints, authentication methods, request/response examples, and integration instructions for automation and third-party apps.</p>";
+  }
+  if(type === 'faq'){
+    panel.innerHTML = "<h2>❓ FAQ</h2><p>Answers to frequently asked questions, covering installation, configuration, alerts, reporting, and security best practices for IDS systems.</p>";
+  }
+}
+</script>
+
+</body>
+</html>

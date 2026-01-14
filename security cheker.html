@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Website Security Checker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", Arial, sans-serif;
+}
+
+body{
+  background:#f1f1f1;
+}
+
+/* MAIN CARD */
+.wrapper{
+  max-width:1200px;
+  margin:80px auto;
+  background:#ffffff;
+  border-radius:18px;
+  padding:60px 50px;
+  text-align:center;
+
+  /* animation */
+  animation:fadeZoom 1s ease forwards, floatBox 4s ease-in-out infinite;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  transition:0.4s;
+}
+
+/* HOVER EFFECT */
+.wrapper:hover{
+  transform:translateY(-8px) scale(1.01);
+  box-shadow:0 18px 40px rgba(0,128,102,0.25);
+}
+
+/* HEADING */
+.wrapper h1{
+  color:#008066;
+  font-size:42px;
+  margin-bottom:25px;
+  font-weight:700;
+}
+
+/* SUB TEXT */
+.wrapper p{
+  color:#444;
+  font-size:18px;
+  line-height:1.6;
+  max-width:900px;
+  margin:0 auto 40px;
+}
+
+/* SEARCH BAR */
+.search-box{
+  display:flex;
+  border:2px solid #008066;
+  border-radius:6px;
+  overflow:hidden;
+  max-width:1000px;
+  margin:0 auto;
+}
+
+.search-box input{
+  flex:1;
+  padding:18px 20px;
+  font-size:18px;
+  border:none;
+  outline:none;
+}
+
+.search-box button{
+  background:#008066;
+  color:#fff;
+  border:none;
+  padding:0 45px;
+  font-size:20px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.search-box button:hover{
+  background:#006b55;
+}
+
+/* DISCLAIMER */
+.disclaimer{
+  margin-top:40px;
+  color:#666;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.disclaimer span{
+  font-weight:600;
+}
+
+.disclaimer a{
+  color:#008066;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.disclaimer a:hover{
+  text-decoration:underline;
+}
+
+/* ANIMATIONS */
+@keyframes fadeZoom{
+  from{
+    opacity:0;
+    transform:scale(0.95);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+@keyframes floatBox{
+  0%{ transform:translateY(0); }
+  50%{ transform:translateY(-6px); }
+  100%{ transform:translateY(0); }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .wrapper{
+    padding:40px 25px;
+  }
+  .wrapper h1{
+    font-size:30px;
+  }
+  .search-box button{
+    padding:0 25px;
+    font-size:16px;
+  }
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", sans-serif;
+}
+
+body{
+  background:#f3f2f1;
+}
+
+/* TITLE */
+.section-title{
+  text-align:center;
+  font-size:42px;
+  font-weight:700;
+  margin:70px 0 60px;
+  color:#1d2b2f;
+}
+
+/* CARD CONTAINER */
+.card-container{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding-bottom:80px;
+  flex-wrap:wrap;
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  width:340px;
+  border-radius:16px;
+  padding:45px 30px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  position:relative;
+  overflow:hidden;
+
+  opacity:0;
+  transform:translateY(50px);
+  transition:transform 0.25s ease, box-shadow 0.4s ease;
+  animation:glowPulse 5s ease-in-out infinite;
+}
+
+/* Reveal on load */
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ICON */
+.icon{
+  font-size:48px;
+  margin-bottom:25px;
+  color:#008066;
+}
+
+/* TITLE */
+.card h3{
+  font-size:22px;
+  margin-bottom:12px;
+  color:#111;
+}
+
+/* TEXT */
+.card p{
+  font-size:16px;
+  color:#555;
+  line-height:1.6;
+  margin-bottom:30px;
+}
+
+/* BUTTON */
+.card button{
+  background:#008066;
+  color:#fff;
+  border:none;
+  padding:14px 38px;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.card button:hover{
+  background:#006b55;
+}
+
+/* Glow animation (unique, slow) */
+@keyframes glowPulse{
+  0%{
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  }
+  50%{
+    box-shadow:0 18px 45px rgba(0,128,102,0.22);
+  }
+  100%{
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  }
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .section-title{
+    font-size:30px;
+  }
+}
+
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", sans-serif;
+}
+
+body{
+  background:#f3f2f1;
+}
+
+/* SECTION TITLE */
+.section-title{
+  text-align:center;
+  font-size:42px;
+  font-weight:700;
+  margin:70px 0 50px;
+  color:#1d2b2f;
+  animation:titleFade 1s ease forwards;
+}
+
+/* MAIN CARD */
+.main-box{
+  max-width:1200px;
+  margin:0 auto 100px;
+  background:#fff;
+  border-radius:18px;
+  padding:60px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px 80px;
+}
+
+/* ITEM */
+.item{
+  display:flex;
+  gap:22px;
+  opacity:0;
+  transform:translateY(30px);
+  animation:reveal 0.8s ease forwards;
+}
+
+.item:nth-child(1){animation-delay:0.2s}
+.item:nth-child(2){animation-delay:0.4s}
+.item:nth-child(3){animation-delay:0.6s}
+.item:nth-child(4){animation-delay:0.8s}
+
+/* ICON */
+.icon{
+  font-size:38px;
+  color:#008066;
+  position:relative;
+}
+
+/* ICON SCAN EFFECT */
+.icon::after{
+  content:"";
+  position:absolute;
+  inset:-6px;
+  border:2px solid rgba(0,128,102,0.3);
+  border-radius:50%;
+  animation:scanPulse 2.5s infinite;
+}
+
+/* TEXT */
+.item h3{
+  font-size:20px;
+  margin-bottom:10px;
+  color:#008066;
+}
+
+.item p{
+  font-size:16px;
+  color:#444;
+  line-height:1.6;
+}
+
+/* HOVER EFFECT */
+.item:hover h3{
+  text-decoration:underline;
+}
+
+/* ANIMATIONS */
+@keyframes titleFade{
+  from{opacity:0; transform:translateY(-20px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+@keyframes reveal{
+  to{opacity:1; transform:translateY(0)}
+}
+
+@keyframes scanPulse{
+  0%{transform:scale(0.7); opacity:0}
+  50%{opacity:1}
+  100%{transform:scale(1.2); opacity:0}
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+  .section-title{
+    font-size:30px;
+  }
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", sans-serif;
+}
+
+body{
+  background:#f3f2f1;
+}
+
+/* COMMON CARD */
+.info-card{
+  max-width:1200px;
+  margin:80px auto;
+  background:#fff;
+  border-radius:18px;
+  padding:60px 70px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+
+  opacity:0;
+  transform:translateY(60px);
+  animation:revealCard 1s ease forwards, floatCard 6s ease-in-out infinite;
+}
+
+/* SECOND CARD DELAY */
+.info-card:nth-child(2){
+  animation-delay:0.3s;
+}
+
+/* HEADING */
+.info-card h2{
+  font-size:42px;
+  color:#1d2b2f;
+  margin-bottom:25px;
+  position:relative;
+  display:inline-block;
+}
+
+/* HEADING LINE ANIMATION */
+.info-card h2::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  height:4px;
+  width:0;
+  background:#008066;
+  animation:lineGrow 1.2s ease forwards;
+}
+
+/* TEXT */
+.info-card p{
+  font-size:18px;
+  color:#444;
+  line-height:1.8;
+  margin-top:30px;
+}
+
+/* HOVER EFFECT */
+.info-card:hover{
+  box-shadow:0 25px 55px rgba(0,128,102,0.25);
+}
+
+/* ANIMATIONS */
+@keyframes revealCard{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes floatCard{
+  0%{ transform:translateY(0); }
+  50%{ transform:translateY(-8px); }
+  100%{ transform:translateY(0); }
+}
+
+@keyframes lineGrow{
+  to{
+    width:100%;
+  }
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .info-card{
+    padding:40px 30px;
+    margin:50px 15px;
+  }
+  .info-card h2{
+    font-size:28px;
+  }
+  .info-card p{
+    font-size:16px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+  <h1>Free website malware and security checker</h1>
+
+  <p>
+    Enter a URL like example.com and the Sucuri SiteCheck scanner will check
+    the website for known malware, viruses, blacklisting status, website errors,
+    out-of-date software, and malicious code.
+  </p>
+
+  <div class="search-box">
+    <input type="text" placeholder="example.com">
+    <button>Submit</button>
+  </div>
+
+  <div class="disclaimer">
+    <span>Disclaimer:</span> Sucuri SiteCheck is a free website security scanner.
+    Remote scanners have limited access and results are not guaranteed.<br>
+    For a full website scan at the client and server levels,
+    <a href="#">contact our team</a>.
+  </div>
+</div>
+
+
+<section>
+<h1 class="section-title">Website protection you can depend on.</h1>
+
+<div class="card-container">
+
+  <div class="card">
+    <div class="icon">🛡️</div>
+    <h3>Website Monitoring</h3>
+    <p>Malware removal and hack repair (response)</p>
+    <button>Detect Malware</button>
+  </div>
+
+  <div class="card">
+    <div class="icon">🔒</div>
+    <h3>Website Firewall</h3>
+    <p>Protect and speed up your site</p>
+    <button>Protect Your Site</button>
+  </div>
+
+  <div class="card">
+    <div class="icon">🧹</div>
+    <h3>Malware Removal</h3>
+    <p>Get rid of malware and clean up a hacked site</p>
+    <button>Remove Malware</button>
+  </div>
+
+</div>
+
+<script>
+/* SCROLL REVEAL */
+const cards = document.querySelectorAll('.card');
+cards.forEach((card, i)=>{
+  setTimeout(()=>card.classList.add('show'), i * 250);
+});
+
+/* MAGNETIC HOVER EFFECT (UNIQUE) */
+cards.forEach(card=>{
+  card.addEventListener('mousemove', e=>{
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width/2;
+    const y = e.clientY - rect.top - rect.height/2;
+
+    card.style.transform = `
+      translate(${x * 0.06}px, ${y * 0.06}px)
+      scale(1.03)
+    `;
+  });
+
+  card.addEventListener('mouseleave', ()=>{
+    card.style.transform = 'translate(0,0) scale(1)';
+  });
+});
+</script>
+
+</section>
+
+<section>
+    <h1 class="section-title">
+  How SiteCheck detects viruses and<br>security threats.
+</h1>
+
+<div class="main-box">
+  <div class="grid">
+
+    <div class="item">
+      <div class="icon">🧬</div>
+      <div>
+        <h3>Scan Website For Malware & Viruses</h3>
+        <p>
+          Detect malicious code and infected file locations by scanning
+          your external website source code.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">🛡️</div>
+      <div>
+        <h3>Check Website Blacklist Status</h3>
+        <p>
+          See if your website is blacklisted by website security authorities
+          such as Google, PhishTank, etc.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">⚠️</div>
+      <div>
+        <h3>Find Out-of-Date Software & Plugins</h3>
+        <p>
+          Identify if your website is running an outdated CMS or vulnerable
+          plugins and extensions.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">🔍</div>
+      <div>
+        <h3>Detect Website Security Issues</h3>
+        <p>
+          Check your website for security anomalies, configuration issues,
+          and security recommendations.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</section>
+
+<section>
+  <!-- CARD 1 -->
+<div class="info-card">
+  <h2>Why use a website checker?</h2>
+  <p>
+    Regularly monitoring your site for malware and indicators of compromise
+    can help you keep tabs on your website’s security and focus your
+    perspective to identify security related issues. Quick response to
+    threats help maintain SEO rankings, organic traffic, brand reputation,
+    and protect website visitors from harm.
+  </p>
+</div>
+
+<!-- CARD 2 -->
+<div class="info-card">
+  <h2>How to check if a website is safe.</h2>
+  <p>
+    Scanning a website’s source code for malicious links, redirects,
+    iframes, JavaScript, or spam can help you determine if a website is not
+    safe to use. Run a web safety check with SiteCheck to scan for any
+    viruses or malware for a specific URL. A quick remote malware scan can
+    help you pinpoint any configuration issues or security anomalies at the
+    client level.
+  </p>
+</div>
+
+</section>
+
+
+</body>
+</html>

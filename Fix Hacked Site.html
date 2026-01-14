@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Website Security Animated</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{
+  background:#000000;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+
+ .hero-video {
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            object-fit: cover;
+            z-index:0;
+        }
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:80px 8% 0;
+  background:radial-gradient(circle at right,#94ffe4,#000000 60%);
+  animation:bgMove 8s ease-in-out infinite alternate;
+}
+.title{
+  color:#fff;
+}
+
+@keyframes bgMove{
+  from{background-position:0% 50%;}
+  to{background-position:100% 50%;}
+}
+
+.hero-text{
+  max-width:600px;
+  animation:fadeSlide 1.2s ease forwards;
+}
+
+h1{
+    color:#fff;
+}
+
+@keyframes fadeSlide{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.hero-text h1{
+  font-size:52px;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.hero-text p{
+  color:#cfdfe3;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.hero-text p strong{
+  color:#fff;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  padding:14px 30px;
+  border:2px solid #1de9b6;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:600;
+  animation:glow 2.5s infinite;
+}
+
+@keyframes glow{
+  0%,100%{box-shadow:0 0 5px #1de9b6;}
+  50%{box-shadow:0 0 20px #1de9b6;}
+}
+h1{
+  color:#000;
+
+}
+
+/* IMAGE */
+.hero-img img{
+  width:680px;
+  animation:float 4s ease-in-out infinite;
+}
+
+
+
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+}
+
+/* FEATURE BAR */
+.features{
+  background:#fff;
+  padding:30px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.feature{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  color:#000;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.feature i{
+  font-size:32px;
+  color:#0a8f83;
+  transition:0.3s;
+}
+
+.feature:hover i{
+  transform:scale(1.15);
+  color:#14b8a6;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-img img{
+    width:320px;
+    margin-top:30px;
+  }
+  .features{
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+  }
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{
+  background:#fff;
+  color:#000;
+}
+
+/* COMMON */
+.btn{
+  display:inline-block;
+  background:#0a8f83;
+  color:#fff;
+  padding:12px 26px;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:600;
+  margin-top:20px;
+}
+
+.section{
+  padding:90px 8%;
+  border-bottom:1px solid #ddd;
+}
+
+/* HEADING */
+.heading{
+  text-align:center;
+  margin-bottom:80px;
+  color: #000;
+}
+.heading h1{
+  font-size:40px;
+  margin-bottom:15px;
+}
+.heading p{
+  color:#555;
+  max-width:650px;
+  margin:auto;
+  line-height:1.6;
+}
+
+/* STEP 1 */
+.content{
+  display:flex;
+  justify-content:space-between;
+  gap:60px;
+}
+
+.left{
+  max-width:420px;
+}
+
+.step{
+  display:flex;
+  gap:18px;
+}
+
+.step-number{
+  font-size:64px;
+  font-weight:700;
+  color:#0a8f83;
+}
+
+.step-text h3{
+  font-size:20px;
+  margin-bottom:10px;
+}
+.step-text p{
+  color:#555;
+  line-height:1.6;
+}
+
+.pricing{
+  display:flex;
+  gap:18px;
+}
+
+.card{
+  border:1px solid #e6e6e6;
+  padding:22px;
+  width:180px;
+  border-radius:6px;
+  text-align:center;
+}
+
+.card h4{
+  font-size:14px;
+  margin-bottom:10px;
+}
+.card p{
+  font-size:12px;
+  color:#555;
+  margin-bottom:15px;
+}
+.price{
+  font-weight:700;
+  margin-bottom:15px;
+}
+
+.card button{
+  background:#0a8f83;
+  border:none;
+  color:#fff;
+  padding:8px 16px;
+  border-radius:4px;
+}
+
+.card.active{
+  background:#041417;
+  color:#fff;
+}
+.card.active p{
+  color:#cfdfe3;
+}
+
+/* STEP 2 & 3 */
+.step-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:60px;
+  margin-top:80px;
+}
+
+.step-big{
+  font-size:64px;
+  font-weight:700;
+  color:#0a8f83;
+  margin-bottom:10px;
+}
+
+.step-content{
+  max-width:480px;
+}
+
+.step-content h3{
+  font-size:22px;
+  margin-bottom:12px;
+}
+
+.step-content p{
+  color:#555;
+  line-height:1.6;
+}
+
+.form-box{
+  width:420px;
+  background:#fff;
+  padding:25px;
+  border-radius:6px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  position:relative;
+}
+
+.float-title{
+  position:absolute;
+  top:-18px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#fff;
+  padding:12px 28px;
+  border-radius:6px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.15);
+  font-weight:600;
+}
+
+.form-box label{
+  font-size:14px;
+  display:block;
+  margin-bottom:6px;
+}
+
+.form-box input{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:4px;
+  margin-bottom:18px;
+}
+
+.btn-grey{
+  background:#8a8f8e;
+}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .content,.step-row{
+    flex-direction:column;
+  }
+  .pricing{
+    flex-wrap:wrap;
+  }
+  .form-box{
+    width:100%;
+  }
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{
+  background:#f4f4f4;
+}
+
+/* WRAPPER */
+.features-wrapper{
+  max-width:1200px;
+  margin:60px auto;
+  background:#fff;
+  border-radius:6px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.12);
+  overflow:hidden;
+  animation:fadeUp 1s ease forwards;
+}
+
+/* GRID */
+.features-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.feature{
+  padding:45px 50px;
+  display:flex;
+  gap:25px;
+  align-items:flex-start;
+  border:1px solid #ddd;
+  transition:transform 0.4s ease, box-shadow 0.4s ease;
+  animation:float 4s ease-in-out infinite;
+}
+
+/* REMOVE DOUBLE BORDERS */
+.feature:nth-child(1){border-right:none;border-bottom:none;}
+.feature:nth-child(2){border-bottom:none;}
+.feature:nth-child(3){border-right:none;}
+
+/* ICON */
+.icon{
+  min-width:70px;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:3px solid #00b894;
+  border-radius:8px;
+  font-size:34px;
+  color:#00b894;
+  transition:0.4s;
+}
+
+/* TEXT */
+.feature h3{
+  font-size:20px;
+  margin-bottom:10px;
+}
+.feature p{
+  font-size:15px;
+  color:#444;
+  line-height:1.6;
+}
+
+/* HOVER MOVE */
+.feature:hover{
+  transform:translateY(-12px) scale(1.02);
+  box-shadow:0 20px 40px rgba(0,184,148,0.25);
+}
+.feature:hover .icon{
+  background:#00b894;
+  color:#fff;
+  transform:rotate(5deg) scale(1.1);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+  100%{transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .features-grid{
+    grid-template-columns:1fr;
+  }
+  .feature{
+    border-right:1px solid #ddd !important;
+  }
+}
+
+
+</style>
+</head>
+
+<body>
+
+   <video autoplay muted loop playsinline class="hero-video">
+    <source src="C:\Users\Vaishnavi\Desktop\Capstone Project\3129671-uhd_3840_2160_30fps.mp4" type="video/mp4">
+</video>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1 class="title">Get Immediate<br>Website Security<br>Help Now</h1>
+
+    <p><strong>Under attack?</strong> We’re ready to help.</p>
+
+    <p>
+      Our website security platform offers emergency malware removal,
+      hack repair, and real-time threat mitigation. Whether you're under
+      attack or need urgent cleanup, our team is ready to restore and
+      protect your site.
+    </p>
+
+    <a href="#" class="btn">Sign up & Fix my Issue</a>
+  </div>
+
+  <div class="hero-img">
+    <img src="./images/securi.jpg" alt="security">
+  </div>
+</section>
+
+<section class="features">
+  <div class="feature">
+    <i class="fa-solid fa-shield-halved"></i>
+    <span>Guaranteed Malware Removal</span>
+  </div>
+
+  <div class="feature">
+    <i class="fa-solid fa-user-shield"></i>
+    <span>Protection Against Future Hacks</span>
+  </div>
+
+  <div class="feature">
+    <i class="fa-solid fa-headset"></i>
+    <span>24/7 Security Team</span>
+  </div>
+
+  <div class="feature">
+    <i class="fa-solid fa-money-bill-wave"></i>
+    <span>30-Day Guarantee</span>
+  </div>
+</section>
+
+
+<!-- STEP 1 -->
+<section class="section">
+  <div class="heading">
+    <h1>Fix Your Hacked Website Fast</h1>
+    <p>
+      24/7 security team access. Website Security with no hidden costs –
+      built for small businesses, web professionals and organizations.
+    </p>
+  </div>
+
+  <div class="content">
+    <div class="left">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-text">
+          <h3>Pick your plan</h3>
+          <p>
+            All plans are guaranteed and include a year of ongoing protection.
+            You'll never be charged hidden fees or extra costs.
+          </p>
+        </div>
+      </div>
+      <a href="#" class="btn">See plans</a>
+    </div>
+
+    <div class="pricing">
+      <div class="card">
+        <h4>Basic Platform</h4>
+        <p>Small websites</p>
+        <div class="price">$229/yr</div>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="card">
+        <h4>Pro Platform</h4>
+        <p>SMBs</p>
+        <div class="price">$339/yr</div>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="card">
+        <h4>Business</h4>
+        <p>Fast response</p>
+        <div class="price">$549/yr</div>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="card active">
+        <h4>Junior Dev</h4>
+        <p>Agencies</p>
+        <div class="price">$999.98/yr</div>
+        <button>Chat Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 2 -->
+<section class="section">
+  <div class="step-row">
+    <div class="form-box">
+      <div class="float-title">New Account</div>
+      <label>Email (cannot be changed)</label>
+      <input type="email">
+      <label>Password</label>
+      <input type="password">
+    </div>
+
+    <div class="step-content">
+      <div class="step-big">2.</div>
+      <h3>Create an account</h3>
+      <p>
+        After entering billing information, you'll get access to the dashboard.
+      </p>
+      <a href="#" class="btn">Create Account</a>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 3 -->
+<section class="section">
+  <div class="step-row">
+    <div class="step-content">
+      <div class="step-big">3.</div>
+      <h3>Open a malware removal request</h3>
+      <p>
+        Submit FTP or hosting login details to start cleanup.
+      </p>
+      <a href="#" class="btn">Open a Ticket</a>
+    </div>
+
+    <div class="form-box">
+      <div class="float-title">Add Website</div>
+      <label>Enter Website</label>
+      <input type="text" placeholder="https://example.com">
+      <a href="#" class="btn btn-grey">Create Request</a>
+    </div>
+  </div>
+</section>
+
+<section>
+    <div class="features-wrapper">
+  <div class="features-grid">
+
+    <div class="feature">
+      <div class="icon">⚡</div>
+      <div>
+        <h3>Website Speed Optimization</h3>
+        <p>
+          Improve website speed by 60% on average with our caching options
+          and global content delivery network (CDN).
+        </p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="icon">⚙️</div>
+      <div>
+        <h3>Multiple Caching Options</h3>
+        <p>
+          Multiple caching options available for every type of website.
+          Protection and speed optimization combined.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="icon">📈</div>
+      <div>
+        <h3>Reliable Website Uptime</h3>
+        <p>
+          Have your website up and running 24 hours a day.
+          Reliable website uptime and improved website load time.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="icon">☁️</div>
+      <div>
+        <h3>High Availability</h3>
+        <p>
+          High availability and redundancy in case of network failure.
+          The CDN runs on a globally distributed Anycast network.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+</body>
+</html>

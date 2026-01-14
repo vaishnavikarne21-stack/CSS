@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IDS Training & Certification</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI, sans-serif;
+  background:linear-gradient(135deg,#020024,#090979,#00d4ff);
+  color:#fff;
+  min-height:100vh;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:45px 20px;
+}
+
+header h1{
+  font-size:40px;
+  text-shadow:0 0 25px #00e5ff;
+}
+
+header p{
+  max-width:850px;
+  margin:18px auto;
+  font-size:16px;
+  opacity:0.9;
+}
+
+/* MAIN */
+.container{
+  max-width:1150px;
+  margin:auto;
+  padding:30px;
+}
+
+/* ROADMAP STYLE */
+.track{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:35px;
+  margin-top:40px;
+}
+
+/* TRAINING CARD */
+.train-card{
+  background:rgba(255,255,255,0.12);
+  padding:30px;
+  border-radius:30px;
+  box-shadow:0 18px 45px rgba(0,0,0,0.5);
+  position:relative;
+  overflow:hidden;
+  animation:float 5s ease-in-out infinite;
+  transition:0.4s;
+}
+
+.train-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,#00e5ff,transparent);
+  opacity:0.25;
+}
+
+.train-card:hover{
+  transform:scale(1.07);
+  box-shadow:0 0 50px rgba(0,229,255,0.9);
+}
+
+/* LEVEL BADGE */
+.level{
+  position:absolute;
+  top:18px;
+  right:18px;
+  background:#00e5ff;
+  color:#000;
+  padding:6px 16px;
+  border-radius:25px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+/* CONTENT */
+.train-card h2{
+  margin-top:0;
+  font-size:22px;
+}
+
+.train-card p{
+  font-size:15px;
+  line-height:1.6;
+  opacity:0.9;
+}
+
+/* SKILLS */
+.skills span{
+  display:inline-block;
+  margin:8px 6px 0 0;
+  padding:6px 14px;
+  background:rgba(0,0,0,0.6);
+  border-radius:18px;
+  font-size:13px;
+}
+
+/* CERTIFICATE */
+.certificate{
+  margin-top:60px;
+  padding:45px;
+  border-radius:35px;
+  background:linear-gradient(135deg,#00e5ff,#00bcd4);
+  color:#000;
+  text-align:center;
+  animation:pulse 3s infinite;
+}
+
+.certificate h2{
+  margin-top:0;
+}
+
+.certificate p{
+  max-width:750px;
+  margin:auto;
+  font-size:16px;
+}
+
+.cert-box{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.cert{
+  background:#000;
+  color:#00e5ff;
+  padding:25px 35px;
+  border-radius:25px;
+  min-width:240px;
+  box-shadow:0 0 30px rgba(0,0,0,0.6);
+  animation:floatSmall 4s ease-in-out infinite;
+}
+
+.cert h3{
+  margin:0 0 10px;
+}
+
+/* ANIMATIONS */
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0);}
+}
+
+@keyframes floatSmall{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-8px);}
+  100%{transform:translateY(0);}
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 rgba(0,0,0,0.5);}
+  50%{box-shadow:0 0 40px rgba(0,0,0,0.7);}
+  100%{box-shadow:0 0 0 rgba(0,0,0,0.5);}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  header h1{font-size:32px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎓 IDS Training & Certification</h1>
+  <p>
+    Structured learning programs designed to build strong intrusion detection
+    skills from fundamentals to advanced enterprise-level security operations.
+  </p>
+</header>
+
+<div class="container">
+
+  <div class="track">
+    <div class="train-card">
+      
+      <h2>IDS Fundamentals Training</h2>
+      <p>
+        Learn core concepts of Intrusion Detection Systems,
+        attack types, traffic analysis, and IDS deployment basics.
+      </p>
+      <div class="skills">
+        <span>IDS Basics</span>
+        <span>Network Attacks</span>
+        <span>Traffic Analysis</span>
+      </div>
+    </div>
+
+    <div class="train-card">
+      <h2>Practical IDS Monitoring</h2>
+      <p>
+        Hands-on training on log analysis, alert tuning,
+        rule optimization, and false-positive reduction.
+      </p>
+      <div class="skills">
+        <span>Log Analysis</span>
+        <span>Alert Tuning</span>
+        <span>Rule Writing</span>
+      </div>
+    </div>
+
+    <div class="train-card">
+      <h2>AI-Based IDS & Automation</h2>
+      <p>
+        Explore machine learning techniques for anomaly detection,
+        automated response systems, and predictive threat modeling.
+      </p>
+      <div class="skills">
+        <span>Machine Learning</span>
+        <span>Anomaly Detection</span>
+        <span>Automation</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="certificate">
+    <h2>Industry-Recognized Certifications</h2>
+    <p>
+      Validate your IDS expertise with certifications aligned to
+      enterprise security and real-world SOC environments.
+    </p>
+
+    <div class="cert-box">
+      <div class="cert">
+        <h3>Certified IDS Analyst</h3>
+        <p>Focus on monitoring, alert handling, and response.</p>
+      </div>
+
+      <div class="cert">
+        <h3>Advanced IDS Engineer</h3>
+        <p>Design, tune, and manage enterprise IDS systems.</p>
+      </div>
+
+      <div class="cert">
+        <h3>AI IDS Specialist</h3>
+        <p>Machine learning driven intrusion detection expert.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

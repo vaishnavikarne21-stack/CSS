@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IDS Tutorials - Animated Boxes</title>
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color: #fff;
+  min-height:100vh;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+h1 {
+  margin:30px 0;
+  font-size:36px;
+  text-shadow:0 0 15px #00e5ff;
+}
+
+/* CONTAINER */
+.container {
+  max-width:1000px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  padding:20px;
+  gap:25px;
+}
+
+/* LEFT BOX (Image/Icon) */
+.left-box {
+  flex:0 0 15%;
+  background:linear-gradient(135deg,#00e5ff,#00bcd4);
+  border-radius:20px;
+  height:120px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:50px;
+  font-weight:bold;
+  box-shadow:0 8px 30px rgba(0,229,255,0.5);
+  animation:leftSlide 4s ease-in-out infinite alternate;
+}
+
+/* RIGHT BOX (Information) */
+.right-box {
+  flex:0 0 80%;
+  background:rgba(255,255,255,0.12);
+  border-radius:20px;
+  min-height:120px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:left;
+  padding:25px;
+  font-size:16px;
+  line-height:1.5;
+  box-shadow:0 8px 30px rgba(0,229,255,0.4);
+  animation:rightSlide 4s ease-in-out infinite alternate;
+}
+
+/* BOX HOVER EFFECT */
+.left-box:hover, .right-box:hover {
+  transform:scale(1.03);
+  box-shadow:0 0 50px #00e5ff,0 0 100px #00bcd4;
+}
+
+/* ANIMATIONS */
+@keyframes leftSlide {
+  0% { transform: translateX(-200px); }
+  100% { transform: translateX(0); }
+}
+@keyframes rightSlide {
+  0% { transform: translateX(200px); }
+  100% { transform: translateX(0); }
+}
+
+/* RESPONSIVE */
+@media screen and (max-width:900px) {
+  .container { flex-direction:column; align-items:center; }
+  .left-box, .right-box { flex:1; width:90%; }
+  .left-box { margin-bottom:10px; }
+}
+</style>
+</head>
+<body>
+
+<h1>🎥 IDS Tutorials & Videos</h1>
+
+<!-- BOX 1 -->
+<div class="container">
+  <div class="left-box">📘</div>
+  <div class="right-box">
+    <h2>Introduction to IDS</h2>
+    <p>
+      Learn about Intrusion Detection Systems (IDS), including Network IDS, Host IDS, Web IDS, and AI-Based IDS. 
+      Understand how these systems protect networks, servers, and applications from cyber threats.
+    </p>
+    <p>
+      Tutorials include architecture diagrams, workflow explanations, and practical demonstrations.
+    </p>
+  </div>
+</div>
+
+<!-- BOX 2 -->
+<div class="container">
+  <div class="left-box">🌐</div>
+  <div class="right-box">
+    <h2>Network IDS</h2>
+    <p>
+      Monitor network traffic in real-time, detect attacks, configure alerts for DDoS, port scanning, and suspicious IPs. 
+      Includes network topology setup, signature rules, and anomaly detection techniques.
+    </p>
+  </div>
+</div>
+
+<!-- BOX 3 -->
+<div class="container">
+  <div class="left-box">🖥</div>
+  <div class="right-box">
+    <h2>Host IDS</h2>
+    <p>
+      Protect servers and individual workstations. Monitors file integrity, analyzes logs, audits system activities, and generates alerts for anomalies. 
+      Covers Linux/Windows host-based IDS configuration and best practices.
+    </p>
+  </div>
+</div>
+
+<!-- BOX 4 -->
+<div class="container">
+  <div class="left-box">🌐</div>
+  <div class="right-box">
+    <h2>Web IDS</h2>
+    <p>
+      Detect web-based attacks like SQL Injection, XSS, CSRF. Includes rule sets, configuration tutorials, and video demonstrations. 
+      Learn to protect web applications and APIs effectively.
+    </p>
+  </div>
+</div>
+
+<!-- BOX 5 -->
+<div class="container">
+  <div class="left-box">🤖</div>
+  <div class="right-box">
+    <h2>AI-Based IDS</h2>
+    <p>
+      Machine Learning powered IDS. Learn anomaly detection, model training, predictive analytics, and integration with Network/Host IDS. 
+      Ideal for enterprises looking for advanced threat detection.
+    </p>
+  </div>
+</div>
+
+<!-- BOX 6 -->
+<div class="container">
+  <div class="left-box">🚀</div>
+  <div class="right-box">
+    <h2>Advanced Tutorials</h2>
+    <p>
+      Enterprise deployment, performance tuning, alert automation, security orchestration, and advanced threat hunting techniques. 
+      Covers both theory and practical demonstrations for professional learning.
+    </p>
+  </div>
+</div>
+
+</body>
+</html>

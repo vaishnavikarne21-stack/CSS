@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Enterprise IDS Scalability</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+  min-height:100vh;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:25px;
+  font-size:28px;
+  font-weight:bold;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:30px;
+}
+
+/* INTRO */
+.intro{
+  text-align:center;
+  max-width:800px;
+  margin:0 auto 40px;
+  opacity:0.9;
+  animation:fadeIn 1.5s ease;
+}
+
+/* CARD GRID */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.12);
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.5);
+  transition:0.4s;
+  animation: float 4s ease-in-out infinite;
+}
+
+.card:nth-child(1){animation-delay:0s;}
+.card:nth-child(2){animation-delay:0.5s;}
+.card:nth-child(3){animation-delay:1s;}
+.card:nth-child(4){animation-delay:1.5s;}
+
+.card:hover{
+  transform:translateY(-15px) scale(1.05);
+  box-shadow:0 25px 50px rgba(0,229,255,0.6);
+}
+
+.card h3{margin-bottom:10px;}
+.card p{font-size:14px; opacity:0.9;}
+.card ul{margin-top:10px; padding-left:18px; font-size:14px;}
+
+/* FLOW DIAGRAM */
+.flow{
+  margin-top:50px;
+  background:rgba(255,255,255,0.12);
+  border-radius:18px;
+  padding:30px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.5);
+}
+
+.flow-title{
+  text-align:center;
+  margin-bottom:20px;
+  font-size:22px;
+}
+
+.flow-boxes{
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.fbox{
+  background:linear-gradient(135deg,#0f2027,#203a43);
+  padding:15px 20px;
+  border-radius:14px;
+  min-width:170px;
+  text-align:center;
+  animation:pulse 2.5s infinite;
+}
+
+/* BACK */
+.back{
+  display:inline-block;
+  margin-top:40px;
+  padding:12px 25px;
+  background:#00e5ff;
+  color:#000;
+  text-decoration:none;
+  border-radius:25px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.back:hover{ background:#00bcd4; }
+
+/* ANIMATIONS */
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0);}
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 rgba(0,229,255,0.7);}
+  50%{box-shadow:0 0 25px rgba(0,229,255,0.9);}
+  100%{box-shadow:0 0 0 rgba(0,229,255,0.7);}
+}
+</style>
+</head>
+
+<body>
+
+<header>📈 Enterprise IDS Scalability</header>
+
+<div class="container">
+
+  <div class="intro">
+    Enterprise IDS scalability ensures the system can handle increasing
+    network traffic, users, and threats without performance degradation.
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>↔ Horizontal Scaling</h3>
+      <p>Add more IDS nodes to handle growing traffic.</p>
+      <ul>
+        <li>Distributed IDS sensors</li>
+        <li>Load balanced traffic</li>
+        <li>High availability</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>↕ Vertical Scaling</h3>
+      <p>Increase system resources to improve performance.</p>
+      <ul>
+        <li>CPU & memory upgrade</li>
+        <li>Faster packet analysis</li>
+        <li>Optimized throughput</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>☁ Cloud & Hybrid</h3>
+      <p>Flexible deployment across environments.</p>
+      <ul>
+        <li>AWS / Azure / GCP</li>
+        <li>Hybrid infrastructure</li>
+        <li>Remote workforce support</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🔁 High Availability</h3>
+      <p>Ensures continuous IDS operation.</p>
+      <ul>
+        <li>Failover systems</li>
+        <li>Redundant components</li>
+        <li>99.9% uptime</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="flow">
+    <div class="flow-title">Scalable Architecture Flow</div>
+    <div class="flow-boxes">
+      <div class="fbox">Traffic Increase</div>
+      <div class="fbox">Load Balancer</div>
+      <div class="fbox">Multiple IDS Nodes</div>
+      <div class="fbox">Central Dashboard</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <a href="Enterprises.html" class="back">⬅ Back to Enterprise</a>
+  </div>
+
+</div>
+
+</body>
+</html>

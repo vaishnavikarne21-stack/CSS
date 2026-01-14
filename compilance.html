@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Enterprise IDS Compliance</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+  min-height:100vh;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:25px;
+  font-size:28px;
+  font-weight:bold;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:30px;
+}
+
+/* INTRO */
+.intro{
+  text-align:center;
+  max-width:800px;
+  margin:0 auto 40px;
+  opacity:0.9;
+  animation:fadeIn 1.5s ease;
+}
+
+/* CARDS GRID */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.12);
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.5);
+  transition:0.4s;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* DIFFERENT ANIMATION DELAYS */
+.card:nth-child(1){animation-delay:0s;}
+.card:nth-child(2){animation-delay:0.5s;}
+.card:nth-child(3){animation-delay:1s;}
+.card:nth-child(4){animation-delay:1.5s;}
+.card:nth-child(5){animation-delay:2s;}
+.card:nth-child(6){animation-delay:2.5s;}
+.card:nth-child(7){animation-delay:3s;}
+.card:nth-child(8){animation-delay:3.5s;}
+
+.card:hover{
+  transform:translateY(-15px) scale(1.05);
+  box-shadow:0 25px 50px rgba(0,229,255,0.6);
+}
+
+.card h3{margin-bottom:10px;}
+.card p{font-size:14px; opacity:0.9;}
+.card ul{margin-top:10px; padding-left:18px; font-size:14px;}
+
+/* COMPLIANCE FLOW */
+.flow{
+  margin-top:50px;
+  background:rgba(255,255,255,0.12);
+  border-radius:18px;
+  padding:30px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.5);
+}
+
+.flow-title{
+  text-align:center;
+  margin-bottom:20px;
+  font-size:22px;
+}
+
+.flow-boxes{
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.fbox{
+  background:linear-gradient(135deg,#0f2027,#203a43);
+  padding:15px 20px;
+  border-radius:14px;
+  min-width:170px;
+  text-align:center;
+  animation:pulse 2.5s infinite;
+}
+
+/* BACK BUTTON */
+.back{
+  display:inline-block;
+  margin-top:40px;
+  padding:12px 25px;
+  background:#00e5ff;
+  color:#000;
+  text-decoration:none;
+  border-radius:25px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.back:hover{ background:#00bcd4; }
+
+/* ANIMATIONS */
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0);}
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 rgba(0,229,255,0.7);}
+  50%{box-shadow:0 0 25px rgba(0,229,255,0.9);}
+  100%{box-shadow:0 0 0 rgba(0,229,255,0.7);}
+}
+</style>
+</head>
+
+<body>
+
+<header>📜 Enterprise IDS Compliance</header>
+
+<div class="container">
+
+  <div class="intro">
+    Enterprise IDS ensures compliance with international security
+    standards and regulatory requirements to protect sensitive data.
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>✅ ISO 27001</h3>
+      <p>Information Security Management Standard</p>
+      <ul>
+        <li>Risk assessment</li>
+        <li>Security controls</li>
+        <li>Continuous monitoring</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🏦 PCI-DSS</h3>
+      <p>Payment Card Industry Data Security</p>
+      <ul>
+        <li>Secure transactions</li>
+        <li>Fraud detection</li>
+        <li>Network monitoring</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🛡 SOC 2</h3>
+      <p>Service Organization Control</p>
+      <ul>
+        <li>Security controls</li>
+        <li>Availability assurance</li>
+        <li>Audit readiness</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🌍 GDPR</h3>
+      <p>General Data Protection Regulation</p>
+      <ul>
+        <li>Data privacy</li>
+        <li>Breach alerts</li>
+        <li>User data protection</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🏥 HIPAA</h3>
+      <p>Healthcare Data Security</p>
+      <ul>
+        <li>Patient data protection</li>
+        <li>Access control</li>
+        <li>Audit logging</li>
+      </ul>
+    </div>
+
+    <!-- NEW BOX 1 -->
+    <div class="card">
+      <h3>📘 NIST Framework</h3>
+      <p>US Cybersecurity Standards</p>
+      <ul>
+        <li>Identify system threats</li>
+        <li>Protect enterprise assets</li>
+        <li>Detect intrusions using IDS</li>
+        <li>Respond & recover fast</li>
+      </ul>
+    </div>
+
+    <!-- NEW BOX 2 -->
+    <div class="card">
+      <h3>⚙ Cloud Security Compliance</h3>
+      <p>Cloud-based IDS compliance</p>
+      <ul>
+        <li>AWS, Azure, GCP</li>
+        <li>Encryption in transit & rest</li>
+        <li>Access control & monitoring</li>
+        <li>Audit & logging</li>
+      </ul>
+    </div>
+
+    <!-- NEW BOX 3 -->
+    <div class="card">
+      <h3>🏢 Government Regulations</h3>
+      <p>Local & national compliance standards</p>
+      <ul>
+        <li>Cyber laws adherence</li>
+        <li>Regular audits</li>
+        <li>Data residency rules</li>
+        <li>Incident reporting</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="flow">
+    <div class="flow-title">Compliance Implementation Flow</div>
+    <div class="flow-boxes">
+      <div class="fbox">Security Policies</div>
+      <div class="fbox">Continuous Monitoring</div>
+      <div class="fbox">Audit Logs</div>
+      <div class="fbox">Compliance Reports</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <a href="Enterprises.html" class="back">⬅ Back to Enterprise</a>
+  </div>
+
+</div>
+
+</body>
+</html>
